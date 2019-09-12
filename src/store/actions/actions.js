@@ -31,11 +31,22 @@ export const subtract = (value) => {
     };
 };
 
-export const storeResult = (resultValue) => {
+export const saveResult = (resultValue) => {
     return {
         type: STORE_RESULT,
         resultValue
-    };
+    }
+}
+/**
+ * 
+ */
+export const storeResult = (resultValue) => {
+    return (dispatch /*,getState, extraArgument*/) => {
+        return setTimeout(() => {
+            console.log("In Store Result")
+            dispatch(saveResult(resultValue))
+        }, 3000)
+    }
 };
 
 export const deleteResult = (resultId) => {

@@ -30,7 +30,6 @@ class Counter extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     //Added nesting happens because of splitting reducer
     return {
         ctr: state.ctr.counter,
